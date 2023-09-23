@@ -53,7 +53,7 @@ static void MX_UART4_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
-uint8_t Rx_data[10];
+
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
@@ -91,7 +91,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
-  HAL_UART_Receive_IT (&huart4, Rx_data, 4);
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -212,11 +212,6 @@ void Error_Handler(void)
   {
   }
   /* USER CODE END Error_Handler_Debug */
-}
-
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
-{
-  HAL_UART_Receive_IT(&huart4, Rx_data, 4);
 }
 
 #ifdef  USE_FULL_ASSERT
